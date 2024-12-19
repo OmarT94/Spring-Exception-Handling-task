@@ -26,6 +26,11 @@ public class AnimalController {
         throw new NoSuchElementException("No Animals found");
     }
 
+    @GetMapping("/null")
+    String getAllAnimalsNullException() throws Exception {
+        throw new Exception("null");
+    }
+
     //Local exception
     @ExceptionHandler(IllegalArgumentException.class)
     public ResponseEntity<ErrorMessage> handleIllegalArgumentException(IllegalArgumentException ex) {

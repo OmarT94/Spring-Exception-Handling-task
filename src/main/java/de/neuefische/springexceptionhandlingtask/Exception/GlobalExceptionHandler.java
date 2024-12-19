@@ -27,4 +27,11 @@ public class GlobalExceptionHandler {
         ErrorMessage message = new ErrorMessage(e.getMessage(), LocalDateTime.now().toString());
         return new ResponseEntity<>(message, HttpStatus.NOT_FOUND);
     }
+
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<ErrorMessage> handleGenericException(Exception ex) {
+        ErrorMessage error = new ErrorMessage("An unexpected error occurred: " + ex.getMessage(),
+                LocalDateTime.now().toString());
+        return new ResponseEntity<>(error, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
 }

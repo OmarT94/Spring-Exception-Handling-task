@@ -31,4 +31,9 @@ public class CarController {
         ErrorMessage error = new ErrorMessage(ex.getMessage(), LocalDateTime.now().toString());
         return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
     }
+
+    @GetMapping("/null")
+    String getAllCarsNullException() throws Exception {
+        throw new Exception("null");
+    }
 }
