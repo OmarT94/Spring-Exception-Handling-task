@@ -7,13 +7,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.NoSuchElementException;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
+    //Global exception
     @ExceptionHandler(IllegalArgumentException.class)
     public ResponseEntity<ErrorMessage> illegalArgumentExceptionHandler(IllegalArgumentException e) {
         ErrorMessage message = new ErrorMessage(e.getMessage(), LocalDateTime.now().toString());
@@ -21,6 +21,7 @@ public class GlobalExceptionHandler {
 
     }
 
+    //Global exception
     @ExceptionHandler(NoSuchElementException.class)
     public ResponseEntity<ErrorMessage>handleNoSuchElementException(NoSuchElementException e) {
         ErrorMessage message = new ErrorMessage(e.getMessage(), LocalDateTime.now().toString());

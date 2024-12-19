@@ -25,6 +25,7 @@ public class CarController {
         throw new NoSuchElementException("No Cars found");
     }
 
+    //Local exception
     @ExceptionHandler(IllegalArgumentException.class)
     public ResponseEntity<ErrorMessage> handleIllegalArgumentException(IllegalArgumentException ex) {
         ErrorMessage error = new ErrorMessage(ex.getMessage(), LocalDateTime.now().toString());

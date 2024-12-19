@@ -26,6 +26,7 @@ public class AnimalController {
         throw new NoSuchElementException("No Animals found");
     }
 
+    //Local exception
     @ExceptionHandler(IllegalArgumentException.class)
     public ResponseEntity<ErrorMessage> handleIllegalArgumentException(IllegalArgumentException ex) {
         ErrorMessage message = new ErrorMessage(ex.getMessage(), LocalDateTime.now().toString());
