@@ -1,4 +1,4 @@
-package de.neuefische.springexceptionhandlingtask;
+package de.neuefische.springexceptionhandlingtask.Controller;
 
 import org.springframework.web.bind.annotation.*;
 

@@ -1,4 +1,4 @@
-package de.neuefische.springexceptionhandlingtask;
+package de.neuefische.springexceptionhandlingtask.Controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,4 +23,6 @@ public class AnimalController {
     String getAllAnimals() {
         throw new NoSuchElementException("No Animals found");
     }
+
+
 }
